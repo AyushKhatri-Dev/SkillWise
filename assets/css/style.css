@@ -1086,7 +1086,7 @@ body.dark-mode h1{
   color: var(--oxford-blue);
 }
 
-}
+
 form {
   max-width: 400px;
   margin: auto;
@@ -1161,63 +1161,120 @@ button:hover {
 }
 
 /* Search Bar */
-/* From Uiverse.io by OnlyCodeChannel */ 
-.navRightSide{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.searchBox {
-  display: flex;
-  max-width: 250px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  background: var(--black);
-  border-radius: 50px;
+/* Search container */
+.search-container {
   position: relative;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
-.searchButton {
-  color: white;
-  position: absolute;
-  right: 8px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--gradient-2, linear-gradient(90deg, var(--light-coral) 20%, var(--selective-yellow) 100%));
-  border: 0;
-  display: inline-block;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+.search-form {
+  display: flex;
+  align-items: center;
 }
-/*hover effect*/
-.SearchBTN:hover {
-  color: #fff;
-  background-color: #1A1A1A;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
-  transform: translateY(-3px);
+
+.search-input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 250px;
+  transition: all 0.3s ease-in-out;
+  appearance: none; 
 }
-/*button pressing effect*/
-.SearchBTN:active {
-  box-shadow: none;
-  transform: translateY(0);
+
+
+.search-input::-webkit-search-cancel-button {
+  position: relative;
+  margin-right: 40px; 
 }
-.searchInput::placeholder{
-  color: var(--light-coral)
-}
-.searchInput {
-  border: none;
-  background: none;
+
+.search-input:focus {
+  width: 300px;
   outline: none;
-  color: var(--light-coral);
-  font-size: 15px;
-  padding: 24px 46px 24px 26px;
+  border-color: #007bff;
 }
 
-=======
-
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: -45px;
 }
+
+.search-button svg {
+  color: #333;
+  width: 24px;
+  height: 24px;
+}
+
+.search-button:hover {
+  background-color: #007bff; 
+}
+
+.search-button:hover svg {
+  color: white; 
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .search-input {
+    width: 200px;
+  }
+
+  .search-input:focus {
+    width: 250px;
+  }
+}
+
+/* Small Devices (Mobile) */
+@media (max-width: 768px) {
+  .search-container {
+    margin: 10px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-form {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .search-input:focus {
+    width: 100%;
+  }
+
+  .search-button {
+    margin-left: -35px;
+  }
+}
+
+/* Extra Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+  .search-input {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .search-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
 
 
 @media(max-width:768px) {
